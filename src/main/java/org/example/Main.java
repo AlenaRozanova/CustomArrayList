@@ -7,7 +7,7 @@ public class Main {
 
         CustomArrayList<Integer> integerCustomArrayList = new CustomArrayList<>();
 
-        for(int i = 0; i < 1000; i++) {
+        for(int i = 0; i < 100000; i++) {
             integerCustomArrayList.add(i);
         }
 
@@ -20,7 +20,7 @@ public class Main {
         System.out.println("Размер листа после удаления всех элементов " + integerCustomArrayList.size());
         System.out.println("-------------------------------------------");
 
-        for(int i = 0; i < 20; i++) {
+        for(int i = 0; i < 100000; i++) {
             integerCustomArrayList.add((int) (Math.random() * 100000));
         }
 

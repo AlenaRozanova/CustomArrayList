@@ -59,11 +59,13 @@ public class CustomArrayList<T> {
      * @param element - элемент для добавления в список
      */
     public void add(T element) {
-        if (currentIndex >= array.length) {
-            increaseArray();
+        if (currentIndex < Integer.MAX_VALUE) {
+            if (currentIndex >= array.length) {
+                increaseArray();
+            }
+            array[currentIndex] = element;
+            currentIndex++;
         }
-        array[currentIndex] = element;
-        currentIndex++;
     }
 
     /**
@@ -214,7 +216,7 @@ public class CustomArrayList<T> {
      * Создать новый массив с новой емкостью и копирует все элементы в новый увеличенный массив
      */
     private void increaseArray() {
-        long newCapacity = array.length * MULTIPLIER;
+        long newCapacity = (long) array.length * MULTIPLIER;
 
         if (newCapacity > Integer.MAX_VALUE) {
             newCapacity = Integer.MAX_VALUE;
